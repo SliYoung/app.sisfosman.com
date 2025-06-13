@@ -9,7 +9,7 @@ $data = mysqli_fetch_array($query);
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Silahkan Ambil Absen</div>
+                        <div class="card-title">Silahkan Ambil Absen !</div>
                     </div>
                     <form action="?page=absensi/proses_tambah" method="post">
                         <div class="card-body">
