@@ -19,7 +19,7 @@ $data = mysqli_fetch_array($query);
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
                                         <label for="">Nis</label>
-                                        <input type="text" class="form-control" name="nis" placeholder="Masukkan Nip" value="<?= $data['nis'] ?>" />
+                                        <input type="text" class="form-control" name="nis" placeholder="Masukkan Nip" value="<?= $data['nis'] ?>" readonly />
                                     </div>
                                     <div class="form-group">
                                         <label for="">Nama Siswa</label>
