@@ -12,7 +12,7 @@ $data = mysqli_fetch_array($query);
                     <div class="card-header">
                         <div class="card-title">Edit Data</div>
                     </div>
-                    <form action="?page=siswa/proses_edit" method="post">
+                    <form action="?page=siswa/proses_edit" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="id_siswa" value="<?= $data['id_siswa'] ?>">
                         <div class="card-body">
                             <div class="row">
@@ -57,7 +57,7 @@ $data = mysqli_fetch_array($query);
                                     <div class="form-group">
                                         <label for="">Kelas</label>
                                         <select name="id_kelas" class="form-select form-control">
-                                            <option value="<?= $data['id_kelas'] ?>"><?= $data['nama_kelas'] ?></option>
+                                            <option value="<?= $data['id_kelas'] ?>"><?= $data['nama_kelas'] ?> </option>
                                             <?php
                                             $querysiswa = mysqli_query($koneksi, "SELECT * FROM tb_kelas");
                                             while ($data1 = mysqli_fetch_array($querysiswa)) {
@@ -71,8 +71,19 @@ $data = mysqli_fetch_array($query);
                                         <input type="date" class="form-control" name="tgl_masuk" placeholder="Masukkan Nohp" value="<?= $data['tgl_masuk'] ?>" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Status</label>
-                                        <input type="text" class="form-control" name="status" placeholder="Masukkan Email" value="<?= $data['status'] ?>" />
+                                        <label>Status</label>
+                                        <select name="status" class="form-select form-control">
+                                            <option value="<?= $data['status'] ?>"><?= $data['status'] ?></option>
+                                            <option value="Aktif">Aktif</option>
+                                            <option value="Lulus">Lulus</option>
+                                            <option value="Keluar">Keluar</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Foto</label>
+                                        <input type="hidden" class="form-control" name="foto_siswa_lama" value="<?= $data['foto_siswa'] ?>" />
+                                        <input type="file" class="form-control" name="foto_siswa" />
+                                        <img src="img/<?=$data['foto_siswa']?>" width="100" style="margin-top: 10px;">
                                     </div>
                                 </div>
                             </div>

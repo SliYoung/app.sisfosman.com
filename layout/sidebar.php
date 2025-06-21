@@ -68,21 +68,57 @@
                         <p>Siswa</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="?page=absensi/index">
                         <i class="fas fa-clipboard-check"></i>
                         <p>Absensi</p>
+                    </a>
+                </li> -->
+                <li class="nav-item">
+                    <a href="?page=jadwal_pelajaran/index">
+                        <i class="fas fa-clipboard-list"></i>
+                        <p>Jadwal Pelajaran</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="?page=absen_session/index">
+                        <i class="fas fa-clipboard-check"></i>
+                        <p>Jam Masuk</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="?page=tugas/index">
+                        <i class="fas fa-file-upload"></i>
+                        <p>Tugas</p>
                     </a>
                 </li>
                 <?php } ?>
                 <?php if ($_SESSION['role'] == 'siswa') { ?>
                     <li class="nav-item">
-                        <a href="?page=absensi/absen">
+                        <a href="?page=absensi/absensi_session">
                             <i class="fas fa-clipboard-check"></i>
                             <p>Absen</p>
                         </a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="?page=jadwal_pelajaran/jadwal_siswa">
+                            <i class="fas fa-book"></i>
+                            <p>Mata pelajaran</p>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="?page=tugas/tugas_session">
+                            <i class="fas fa-file-upload"></i>
+                            <p>Pegumpulan Tugas</p>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="?page=nilai/nilai_siswa">
+                            <i class="fas fa-user-graduate"></i>
+                            <p>Nilai</p>
+                        </a>
+                        </li>
                     <?php } ?>
-                    </li>
             </ul>
         </div>
     </div>

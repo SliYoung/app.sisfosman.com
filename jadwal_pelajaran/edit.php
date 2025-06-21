@@ -1,6 +1,6 @@
 <?php
 $id_jadwal_pelajaran = $_GET['id_jadwal_pelajaran'];
-$query = mysqli_query($koneksi, "SELECT * FROM tb_jadwal_pelajaran tjp JOIN tb_kelas tk ON tjp.id_kelas = tK.id_kelas JOIN tb_mapel tm ON tjp.id_mapel = tm.id_mapel JOIN tb_guru tg ON tjp.id_guru = tg.id_guru WHERE id_jadwal_pelajaran='$id_jadwal_pelajaran'");
+$query = mysqli_query($koneksi, "SELECT * FROM tb_jadwal_pelajaran tjp JOIN tb_kelas tk ON tjp.id_kelas = tk.id_kelas JOIN tb_mapel tm ON tjp.id_mapel = tm.id_mapel JOIN tb_guru tg ON tjp.id_guru = tg.id_guru WHERE id_jadwal_pelajaran='$id_jadwal_pelajaran'");
 $data = mysqli_fetch_array($query);
 ?>
 

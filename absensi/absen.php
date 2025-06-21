@@ -1,4 +1,5 @@
 <?php
+$id_absen_session = $_GET['id_absen_session'];
 $tgl = date('Y-m-d');
 $query = mysqli_query($koneksi, "SELECT * FROM tb_absensi WHERE tanggal='$tgl' AND id_siswa='$_SESSION[user_ref_id]'");
 $data = mysqli_fetch_array($query);
@@ -12,6 +13,7 @@ $data = mysqli_fetch_array($query);
                         <div class="card-title">Silahkan Ambil Absen !</div>
                     </div>
                     <form action="?page=absensi/proses_tambah" method="post">
+                    <input type="hidden" name="id_absen_session" value="<?=$id_absen_session?>">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">

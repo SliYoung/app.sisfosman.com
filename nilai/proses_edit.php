@@ -25,7 +25,7 @@ if ($nilai_angka >= 85) {
 $query = mysqli_query($koneksi, "UPDATE tb_nilai SET id_siswa='$id_siswa',id_mapel='$id_mapel',semester='$semester',tahun_ajaran='$tahun_ajaran',nilai_angka='$nilai_angka',nilai_huruf='$nilai_huruf' WHERE id_nilai='$id_nilai'");
 
 if ($query){
-    echo "<script>alert('Data Berhasil DiUpdate');window.location.href='?page=nilai/index';</script>";
+    echo "<script>alert('Data Berhasil DiUpdate');window.location.href='?page=nilai/index&id_siswa=$id_siswa';</script>";
 }else{
     echo "<script>alert('Data Gagal DiUpdate');window.location.href='?page=nilai/edit&id_nilai=$id_nilai';</script>";
 

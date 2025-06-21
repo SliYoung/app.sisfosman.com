@@ -22,9 +22,9 @@ if ($nilai_angka >= 85) {
 $query = mysqli_query($koneksi, "INSERT INTO tb_nilai(id_siswa,id_mapel,semester,tahun_ajaran,nilai_angka,nilai_huruf) VALUES ('$id_siswa','$id_mapel','$semester','$tahun_ajaran','$nilai_angka','$nilai_huruf')");
 
 if ($query){
-    echo "<script>alert('Data Berhasil Ditambahkan');window.location.href='?page=nilai/index';</script>";
+    echo "<script>alert('Data Berhasil Ditambahkan');window.location.href='?page=nilai/index&id_siswa=$id_siswa';</script>";
 }else{
-    echo "<script>alert('Data Gagal Ditambahkan');window.location.href='?page=nilai/tambah';</script>";
+    echo "<script>alert('Data Gagal Ditambahkan');window.location.href='?page=nilai/tambah&id_siswa=$id_siswa';</script>";
 
 }
 

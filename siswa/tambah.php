@@ -6,7 +6,7 @@
                     <div class="card-header">
                         <div class="card-title">Tambah Data Siswa</div>
                     </div>
-                    <form action="?page=siswa/proses_tambah" method="post">
+                    <form action="?page=siswa/proses_tambah" method="post" enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">
@@ -46,7 +46,7 @@
                                             $query = mysqli_query($koneksi, "SELECT * FROM tb_kelas");
                                             while ($data = mysqli_fetch_array($query)) {
                                             ?>
-                                                <option value="<?= $data['id_kelas'] ?>"><?= $data['nama_kelas'] ?></option>
+                                                <option value="<?= $data['id_kelas'] ?>"><?= $data['nama_kelas'] ?> (<?= $data['tingkat'] ?>)</option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -62,6 +62,10 @@
                                             <option value="Lulus">Lulus</option>
                                             <option value="Keluar">Keluar</option>
                                         </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Foto</label>
+                                        <input type="file" class="form-control" name="foto_siswa" />
                                     </div>
                                 </div>
                             </div>

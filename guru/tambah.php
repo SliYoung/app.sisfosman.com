@@ -6,7 +6,7 @@
                     <div class="card-header">
                         <div class="card-title">Tambah Data</div>
                     </div>
-                    <form action="?page=guru/proses_tambah" method="post">
+                    <form action="?page=guru/proses_tambah" method="post" enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">
@@ -29,7 +29,7 @@
                                     <div class="form-group">
                                         <label for="">Mapel</label>
                                         <select name="id_mapel" class="form-select form-control">
-                                            <option value="">Pilih mapel</option>
+                                            <option value="">Pilih Mapel</option>
                                             <?php
                                             $query = mysqli_query($koneksi, "SELECT * FROM tb_mapel");
                                             while ($data = mysqli_fetch_array($query)) {
@@ -49,6 +49,10 @@
                                 <div class="form-group">
                                     <label for="">Email</label>
                                     <input type="text" class="form-control" name="email" placeholder="Masukkan Email" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Foto</label>
+                                    <input type="file" class="form-control" name="foto_guru" />
                                 </div>
                             </div>
                         </div>

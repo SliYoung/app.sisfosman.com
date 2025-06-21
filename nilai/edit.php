@@ -62,7 +62,7 @@ $data = mysqli_fetch_array($query);
                         </div>
                         <div class="card-action">
                             <button class="btn btn-success" type="submit">Simpan</button>
-                            <a href="?page=nilai/index" class="btn btn-danger">Kembali</a>
+                            <a href="?page=nilai/index&id_siswa=<?=$id_siswa?>" class="btn btn-danger">Kembali</a>
                         </div>
                     </form>
                 </div>

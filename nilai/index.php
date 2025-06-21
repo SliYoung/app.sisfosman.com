@@ -5,8 +5,8 @@
       <div class="card">
         <div class="card-header">
           <div class="d-flex align-items-center">
-            <h4 class="card-title">Data Jadwal Pelajaran</h4>
-            <a class="btn btn-primary btn-round ms-auto" href="?page=nilai/tambah">
+            <h4 class="card-title">Data Nilai</h4>
+            <a class="btn btn-primary btn-round ms-auto" href="?page=nilai/tambah&id_siswa=<?=$_GET['id_siswa']?>">
               <i class="fa fa-plus"></i>
               Tambah Data
             </a>
@@ -30,7 +30,8 @@
               <tbody>
                 <?php
                 $no = 1;
-                $query = mysqli_query($koneksi, "SELECT * FROM tb_nilai tn JOIN tb_siswa ts ON tn.id_siswa = ts.id_siswa JOIN tb_mapel tm ON tn.id_mapel = tm.id_mapel");
+                $id_siswa = $_GET['id_siswa'];
+                $query = mysqli_query($koneksi, "SELECT * FROM tb_nilai tn JOIN tb_siswa ts ON tn.id_siswa = ts.id_siswa JOIN tb_mapel tm ON tn.id_mapel = tm.id_mapel WHERE tn.id_siswa='$id_siswa'");
                 while ($data = mysqli_fetch_array($query)) {
                 ?>
                   <tr>
@@ -44,7 +45,8 @@
                     <td>
                       <div class="form-button-action">
                         <a class="btn btn-link btn-primary btn-lg" href="?page=nilai/edit&id_nilai=<?= $data['id_nilai'] ?>"><i class="fa fa-edit"></i></a>
-                        <a class="btn btn-link btn-danger btn-lg" href="?page=nilai/hapus&id_nilai=<?= $data['id_nilai'] ?>" onclick="return confirm('anda yakin hapus?')"><i class="fa fa-times"></i></a>
+                        <a class="btn btn-link btn-danger btn-lg" href="?page=nilai/hapus&id_nilai=<?= $data['id_nilai'] ?>&id_siswa=<?= $data['id_siswa'] ?>" onclick="return confirm('Yakin ingin menghapus data ini?')"><i class="fa fa-times"></i></a>
+
                       </div>
                     </td>
                   </tr>

@@ -10,7 +10,12 @@ $id_kelas= $_POST ['id_kelas'];
 $tgl_masuk= $_POST ['tgl_masuk'];
 $status= $_POST ['status'];
 
-$query = mysqli_query($koneksi, "INSERT INTO tb_siswa(nis,nama,jenis_kelamin,tempat_lahir,tanggal_lahir,alamat,id_kelas,tgl_masuk,status) VALUES ('$nis','$nama','$jenis_kelamin','$tempat_lahir','$tanggal_lahir','$alamat','$id_kelas','$tgl_masuk','$status')");
+$foto =$_FILES['foto_siswa']['name'];
+$foto_siswa =uniqid() . $foto;
+$namaSementara =$_FILES['foto_siswa']['tmp_name'];
+$terupload = move_uploaded_file($namaSementara, 'img/' . $foto_siswa);
+
+$query = mysqli_query($koneksi, "INSERT INTO tb_siswa(nis,nama,jenis_kelamin,tempat_lahir,tanggal_lahir,alamat,id_kelas,tgl_masuk,status,foto_siswa) VALUES ('$nis','$nama','$jenis_kelamin','$tempat_lahir','$tanggal_lahir','$alamat','$id_kelas','$tgl_masuk','$status','$foto_siswa')");
 
 if ($query){
     echo "<script>alert('Data Berhasil Ditambahkan');window.location.href='?page=siswa/index';</script>";

@@ -25,6 +25,7 @@
                   <th>Alamat</th>
                   <th>Nohp</th>
                   <th>Email</th>
+                  <th>Foto</th>
                   <th style="width: 10%">Action</th>
                 </tr>
               </thead>
@@ -43,6 +44,7 @@
                     <td><?= $data['alamat'] ?></td>
                     <td><?= $data['no_hp'] ?></td>
                     <td><?= $data['email'] ?></td>
+                    <td> <img src="img/<?= $data['foto_guru'] ?>" width="50px"></td>
                     <td>
                       <div class="form-button-action">
                         <a class="btn btn-link btn-primary btn-lg" href="?page=guru/edit&id_guru=<?= $data['id_guru'] ?>"><i class="fa fa-edit"></i></a>

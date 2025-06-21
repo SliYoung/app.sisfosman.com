@@ -12,7 +12,7 @@ $data = mysqli_fetch_array($query);
                     <div class="card-header">
                         <div class="card-title">Edit Data</div>
                     </div>
-                    <form action="?page=guru/proses_edit" method="post">
+                    <form action="?page=guru/proses_edit" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="id_guru" value="<?= $data['id_guru'] ?>">
                         <div class="card-body">
                             <div class="row">
@@ -58,6 +58,12 @@ $data = mysqli_fetch_array($query);
                                     <div class="form-group">
                                         <label for="">Email</label>
                                         <input type="text" class="form-control" name="email" placeholder="Masukkan Email" value="<?= $data['email'] ?>" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Foto</label>
+                                        <input type="hidden" class="form-control" name="foto_guru_lama" value="<?= $data['foto_guru'] ?>" />
+                                        <input type="file" class="form-control" name="foto_guru" />
+                                        <img src="img/<?=$data['foto_guru']?>" width="100" style="margin-top: 10px;">
                                     </div>
 
                                 </div>

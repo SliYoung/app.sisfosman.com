@@ -19,10 +19,14 @@ if (isset($_POST['login'])){
 
         if ($data['role'] == 'guru'){
             $nama = $data['nama_guru'];
+            $foto = 'img/' . $data['foto_guru'];
         }elseif  ($data['role'] == 'siswa'){
             $nama = $data['nama_siswa'];
+            $foto = 'img/' . $data['foto_siswa'];
         }elseif  ($data['role'] == 'admin'){
-            $nama = 'administrator';
+            $nama = 'Administrator';
+            $foto = 'assets/assets/img/profile.jpg';
+
         }
         
         session_start();
@@ -31,7 +35,9 @@ if (isset($_POST['login'])){
         $_SESSION['role'] = $data ['role'];
         $_SESSION['user_ref_id'] = $data ['user_ref_id'];
         $_SESSION['status'] = $data ['status'];
+        $_SESSION['id_kelas'] = $data ['id_kelas'];
         $_SESSION['nama'] = $nama;
+        $_SESSION['foto'] = $foto;
          
         echo "<script>
    alert('Login Berhasil')

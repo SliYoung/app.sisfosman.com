@@ -27,6 +27,7 @@
                   <th>Kelas</th>
                   <th>Tanggal Masuk</th>
                   <th>Status</th>
+                  <th>Foto</th>
                   <th style="width: 10%">Action</th>
                 </tr>
               </thead>
@@ -53,11 +54,13 @@
                     <td><?= $data['tempat_lahir'] ?></td>
                     <td><?= $data['tanggal_lahir'] ?></td>
                     <td><?= $data['alamat'] ?></td>
-                    <td><?= $data['nama_kelas'] ?></td>
+                    <td><?= $data['nama_kelas'] ?> (<?= $data['tingkat'] ?>)</td>
                     <td><?= $data['tgl_masuk'] ?></td>
                     <td><?= $data['status'] ?></td>
+                    <td><img src="img/<?=$data['foto_siswa']?>" width="50px"></td>
                     <td>
                       <div class="form-button-action">
+                        <a class="btn btn-link btn-info btn-lg" href="?page=nilai/index&id_siswa=<?= $data['id_siswa'] ?>"><i class="fa fa-eye"></i></a>
                         <a class="btn btn-link btn-primary btn-lg" href="?page=siswa/edit&id_siswa=<?= $data['id_siswa'] ?>"><i class="fa fa-edit"></i></a>
                         <a class="btn btn-link btn-danger btn-lg" href="?page=siswa/hapus&id_siswa=<?= $data['id_siswa'] ?>" onclick="return confirm('anda yakin hapus?')"><i class="fa fa-times"></i></a>
                       </div>

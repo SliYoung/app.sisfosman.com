@@ -41,6 +41,8 @@
 <!-- Kaiadmin DEMO methods, don't include it in your project! -->
 <script src="assets/assets/js/setting-demo.js"></script>
 <script src="assets/assets/js/demo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 <script>
     $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
         type: "line",
@@ -126,6 +128,15 @@
         });
       });
     </script>
+    <script>
+    $(document).ready(function() {
+        $('.select2').select2({
+            placeholder: "Pilih Jadwal",
+            allowClear: true,
+            width: '100%' // agar penuh mengikuti parent
+        });
+    });
+</script>
 </body>
 
 </html>

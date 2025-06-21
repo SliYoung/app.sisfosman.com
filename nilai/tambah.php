@@ -1,3 +1,9 @@
+<?php
+$id_siswa = $_GET['id_siswa'];
+$query = mysqli_query($koneksi, "SELECT * FROM tb_siswa WHERE id_siswa='$id_siswa'");
+$data = mysqli_fetch_array($query);
+?>
+
 <div class="container">
     <div class="page-inner">
         <div class="row">
@@ -12,8 +18,8 @@
                                 <div class="col-md-12 col-lg-12">
                                     <div class="form-group">
                                         <label for="">Nama Siswa</label>
-                                        <select name="id_siswa" class="form-select form-control">
-                                            <option value="">Pilih Siswa</option>
+                                        <select name="id_siswa" class="form-select form-control" readonly>
+                                            <option value="<?=$data['id_siswa']?>"><?=$data['nama']?> </option>
                                             <?php
                                             $query = mysqli_query($koneksi, "SELECT * FROM tb_siswa");
                                             while ($data = mysqli_fetch_array($query)) {
@@ -55,7 +61,7 @@
                         </div>
                         <div class="card-action">
                             <button class="btn btn-success" type="submit">Simpan</button>
-                            <a href="?page=nilai/index" class="btn btn-danger">Kembali</a>
+                            <a href="?page=nilai/index&id_siswa=<?=$id_siswa?>" class="btn btn-danger">Kembali</a>
                         </div>
                     </form>
                 </div>
