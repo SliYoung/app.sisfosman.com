@@ -54,12 +54,10 @@ $data = mysqli_fetch_array($query);
                                     <input type="datetime-local" class="form-control" name="deadline" value="<?= $data['deadline'] ?>" />
                                 </div>
                                     <div class="form-group">
-                                        <label for="">Foto</label>
+                                        <label for="">File Tugas</label>
                                         <input type="hidden" class="form-control" name="file_tugas_lama" value="<?= $data['file_tugas'] ?>" />
                                         <input type="file" class="form-control" name="file_tugas" />
                                         <iframe src="files/<?=$data['file_tugas']?>" width="300" height="200" style="margin-top: 10px; border: 1px solid #ccc;"></iframe>
-
-
                                     </div>
 
                                 </div>

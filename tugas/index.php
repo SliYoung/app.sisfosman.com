@@ -46,7 +46,7 @@
                    
                     <td>
                       <div class="form-button-action">
-                      <a class="btn btn-link btn-info btn-lg" href="?page=absensi/index&id_absen_session=<?= $data['id_absen_session'] ?>"><i class="fa fa-eye"></i></a>
+                      <a class="btn btn-link btn-info btn-lg" href="?page=tugas/nilai_tugas&id_tugas=<?= $data['id_tugas'] ?>"><i class="fa fa-eye"></i></a>
                         <a class="btn btn-link btn-primary btn-lg" href="?page=tugas/edit&id_tugas=<?= $data['id_tugas'] ?>"><i class="fa fa-edit"></i></a>
                         <a class="btn btn-link btn-danger btn-lg" href="?page=tugas/hapus&id_tugas=<?= $data['id_tugas'] ?>" onclick="return confirm('anda yakin hapus?')"><i class="fa fa-times"></i></a>
                       </div>
